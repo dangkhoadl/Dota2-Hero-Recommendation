@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<!-- Title -->
+	<title> Dota API</title>
+
+	<!-- Header -->
+	<head>
+		<link rel="stylesheet" href="../static/main.css">
+	</head>
+
+	<!-- Body -->
+	<body>
+		<!-- Container -->
+		<div class="container">
+			<!-- Header -->
+			<h1>Dota2 API</h1>
+
+			<!-- Header -->
+			<h3>Please enter a list of player id</h3>
+
+			<!-- List of ids -->
+			<form form action="{{url_for('result')}}" method="POST">
+				<input placeholder="Each id separated by a comma. Eg: 115202971, 107219615, 117724056" type="id_list" name="id_name" required> <br>
+				<button type="submit"> Submit </button>
+			</form>
+
+			<!-- Message -->
+			<div class="message">
+				{{text | safe}}
+			</div>
+
+		</div>
+	</body>
+
+</html>

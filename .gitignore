@@ -1,2 +1,4 @@
 *.ipynb_checkpoints
 ./web_app/.git
+./web_app/venv
+./web_app/__pycache__

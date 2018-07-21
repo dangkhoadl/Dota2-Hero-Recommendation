@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<!-- Title -->
+	<title> Dota API</title>
+
+	<!-- Header -->
+	<head>
+		<link rel="stylesheet" href="../static/main.css">
+	</head>
+
+	<!-- Body -->
+	<body>
+		<!-- Container -->
+		<div class="container">
+			<!-- Header -->
+			<h1>Dota2 API</h1>
+
+			<!-- Header -->
+			<h3>Results: </h3>
+
+			<!-- Message -->
+			<div class="message">
+				{{text | safe}}
+			</div>
+
+			<!-- Get back button -->
+			<form form action="{{url_for('index')}}" method="POST">
+				<button type="submit"> Get back </button>
+			</form>
+			
+		</div>
+	</body>
+
+</html>
