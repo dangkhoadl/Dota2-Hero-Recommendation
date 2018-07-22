@@ -25,6 +25,7 @@ class Database:
             self,
             database=CREDENTIAL):
         '''Create table'''
+        # [TODO] resuse connection
         conn = psycopg2.connect(database)
         cur = conn.cursor()
 
@@ -47,6 +48,7 @@ class Database:
             week_wr, month_wr, year_wr,
             database=CREDENTIAL):
         '''Insert item'''
+        # [TODO] resuse connection
         conn = psycopg2.connect(database)
         cur = conn.cursor()
 
@@ -67,6 +69,7 @@ class Database:
             player_id,
             database=CREDENTIAL):
         try:
+            # [TODO] resuse connection
             conn = psycopg2.connect(database)
             cur = conn.cursor()
 
@@ -92,6 +95,7 @@ class Database:
             id_list,
             database=CREDENTIAL):
         try:
+            # [TODO] resuse connection
             conn = psycopg2.connect(database)
             cur = conn.cursor()
 
@@ -112,7 +116,7 @@ class Database:
                         'player_name': entry[1],
                         'week_wr': entry[2],
                         'month_wr': entry[3],
-                        'year_wr': entry[4],})
+                        'year_wr': entry[4]})
 
             conn.commit()
             conn.close()
