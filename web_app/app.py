@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
-from process_id import clean_input, get_player
-from create_schema import Database
+from leaderboard/process_id import clean_input, get_player
+from leaderboard/create_schema import Database
 from multiprocessing import Pool
 
 app = Flask(__name__)
