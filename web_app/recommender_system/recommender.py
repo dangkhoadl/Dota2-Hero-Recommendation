@@ -140,7 +140,7 @@ def recommend_user(player_id, data, hero_name):
                 <a href="https://www.opendota.com/players/
                     {0}/matches?hero_id={5}">{6}
                 </a> <br><br>
-            Your play style is similar to: <br>
+            Your play style are similar to: <br>
                 <a href="https://dotabuff.com/players/{7}">
                     https://www.dotabuff.com/players/{7}
                 </a> <br>

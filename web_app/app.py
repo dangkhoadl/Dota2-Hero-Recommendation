@@ -15,12 +15,6 @@ from recommender import clean_player_id, recommend_user
 app = Flask(__name__)
 db = Database()
 
-# Dataset for recommender system
-with open('.//recommender_system//cleaned_data.json') as json_data:
-    dataset = json.load(json_data)
-with open('.//recommender_system//hero_name.json') as json_data:
-    hero_name = json.load(json_data)
-
 
 # Home page
 @app.route('/', methods=['GET', 'POST'])
@@ -109,6 +103,11 @@ def heroes_recommend():
                 text='Players not found !!!')
 
         # [TODO] Implement a database for the recommender system
+        # Dataset for recommender system
+        with open('.//recommender_system//cleaned_data.json') as json_data:
+            dataset = json.load(json_data)
+        with open('.//recommender_system//hero_name.json') as json_data:
+            hero_name = json.load(json_data)
         message = recommend_user(user_id, dataset, hero_name)
 
         return render_template("heroes_recommend.html", text=message)
