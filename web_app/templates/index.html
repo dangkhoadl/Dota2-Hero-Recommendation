@@ -17,11 +17,20 @@
 			<h1>Dota2 API</h1>
 
 			<!-- Header -->
-			<h3>Please enter a list of player id</h3>
+			<h3>Leaderboard - Please type in a list of player id</h3>
 
 			<!-- List of ids -->
 			<form form action="{{url_for('result')}}" method="POST">
 				<input placeholder="Each id separated by a comma. Eg: 115202971, 107219615, 117724056" type="id_list" name="id_name" required> <br>
+				<button type="submit"> Submit </button>
+			</form>
+
+			<!-- Header -->
+			<h3>Heroes recommendation - Please type in a player id</h3>
+
+			<!-- 1 user id -->
+			<form form action="{{url_for('heroes_recommend')}}" method="POST">
+				<input placeholder="Input 1 player id. Eg: 115202971" type="id_list" name="player_id" required> <br>
 				<button type="submit"> Submit </button>
 			</form>
 

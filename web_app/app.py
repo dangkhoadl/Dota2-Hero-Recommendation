@@ -1,22 +1,40 @@
-from flask import Flask, render_template, request
-from leaderboard/process_id import clean_input, get_player
-from leaderboard/create_schema import Database
-from multiprocessing import Pool
+import sys
+sys.path.insert(0, './leaderboard')
+sys.path.insert(0, './recommender_system')
 
+from flask import Flask, render_template, request
+from multiprocessing import Pool
+import json
+
+from process_id import clean_input, get_player
+from create_schema import Database
+
+from recommender import clean_player_id, recommend_user
+
+# App and database
 app = Flask(__name__)
 db = Database()
 
+# Dataset for recommender system
+with open('.//recommender_system//cleaned_data.json') as json_data:
+    dataset = json.load(json_data)
+with open('.//recommender_system//hero_name.json') as json_data:
+    hero_name = json.load(json_data)
 
+
+# Home page
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
 
+# API 1 - Leaderboard
 @app.route('/result', methods=['POST'])
 def result():
     if request.method == 'POST':
         # Get and clean input
         id_list = request.form["id_name"]
+        print(id_list)
         id_list = clean_input(id_list)
 
         # Insert Entry if not in database
@@ -74,6 +92,26 @@ def result():
                     else 'Not played since last year')
 
         return render_template("result.html", text=message)
+    return render_template("index.html", text='Players not found !!!')
+
+
+# API 2 - Recommender system
+@app.route('/heroes_recommend', methods=['POST'])
+def heroes_recommend():
+    if request.method == 'POST':
+        # Get and clean input
+        user_id = request.form["player_id"]
+        user_id = clean_player_id(user_id)
+
+        if user_id is None:
+            return render_template(
+                "heroes_recommend.html",
+                text='Players not found !!!')
+
+        # [TODO] Implement a database for the recommender system
+        message = recommend_user(user_id, dataset, hero_name)
+
+        return render_template("heroes_recommend.html", text=message)
     return render_template("index.html", text='Players not found !!!')
 
 
