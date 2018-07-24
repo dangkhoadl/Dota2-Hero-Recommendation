@@ -1,0 +1,10 @@
+\BOOKMARK [1][-]{section.1}{Introductions}{}% 1
+\BOOKMARK [1][-]{section.2}{Implementations}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Given\040a\040list\040of\040player\(s\)\040\(either\040player_id\040or\040username\040and\040assuming\040all\040players\040have\040a\040Dota2\040public\040profile\),\040return\040a\040leaderboard\040of\040the\040players\040based\040on\040their\040win\040rate\040over\040time\040\(last\040week,\040last\040month,\040last\040year...\)}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Given\040one\040player,\040return\040a\040suggestion\040of\040a\040hero\040that\040one\040player\040should\040play\040based\040on\040the\040player's\040historical\040data}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Questions}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Which\040tech\040stacks/frameworks\040\(backend,\040database,\040frontend\040if\040applicable\)\040you\040choose\040to\040build\040your\040APIs?\040You\040should\040also\040discuss\040the\040Pros\040and\040Cons\040of\040all\040the\040various\040technologies\040you\040considered}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{How\040you\040can\040improve\040the\040APIs\040further\040in\040the\040long\040term\040\(i.e.\040product\040roadmap\040that\040includes\040a\040brief\040description\040of\040why\040the\040features\040are\040useful\)}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Why\040you\040choose\040the\040open\040API\(s\)\040that\040you\040used}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.4}{For\040API\040#3,\040why\040is\040your\040recommendation\040engine\040good?}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{References}{}% 10

@@ -1,16 +1,26 @@
 
-# Web app
+# [https://dangkhoaapi.herokuapp.com/](https://dangkhoaapi.herokuapp.com/)
 
-## Virtual Environment configure - Windows
-- Installation
-	
-		python -m pip install --upgrade pip
-		pip install virtualenv
-- Configure Virtual Environment
+## Frameworks
+	- Flask for web backend
+	- Postgresql for database
 
-		virtualenv venv
-		venv\\Scripts\\activate.bat
-- Install all necessary packages for the project
+## Python packages used in the application
 
-		pip install -r requirements.txt
-
+		aniso8601==3.0.2
+		certifi==2018.4.16
+		chardet==3.0.4
+		click==6.7
+		Flask==0.10.1
+		Flask-RESTful==0.3.6
+		gunicorn==19.9.0
+		idna==2.7
+		itsdangerous==0.24
+		Jinja2==2.8
+		MarkupSafe==0.23
+		psycopg2==2.7.5
+		pytz==2018.5
+		requests==2.19.1
+		six==1.11.0
+		urllib3==1.23
+		Werkzeug==0.11.15
