@@ -91,8 +91,8 @@ def get_player_stats_response(player_id):
     return data_json
 
 
-# Algorithm to compute score
 def compute_score(user_hero_stats, player_id):
+    '''Algorithm to compute score'''
     try:
         total_scores = 0.0
         hero_data = {}
@@ -130,27 +130,27 @@ def recommend_user(player_id, data, hero_name):
 
         # [TODO] move the message config to html
         message = '''
-            Your best heroes are:
-                <a href="https://www.opendota.com/players/
-                    {0}/matches?hero_id={1}">{2}
-                </a>,
-                <a href="https://www.opendota.com/players/
-                    {0}/matches?hero_id={3}">{4}
-                </a>,
-                <a href="https://www.opendota.com/players/
-                    {0}/matches?hero_id={5}">{6}
-                </a> <br><br>
-            Your play style are similar to: <br>
-                <a href="https://dotabuff.com/players/{7}">
-                    https://www.dotabuff.com/players/{7}
-                </a> <br>
-                <a href="https://dotabuff.com/players/{8}">
-                    https://www.dotabuff.com/players/{8}
-                </a> <br>
-                <a href="https://dotabuff.com/players/{9}">
-                    https://www.dotabuff.com/players/{9}
-                </a> <br><br>
-            We recommend you to practice:
+Your best heroes are:
+    <a href="https://www.opendota.com/players/{0}/matches?hero_id={1}">
+        {2}
+    </a>,
+    <a href="https://www.opendota.com/players/{0}/matches?hero_id={3}">
+        {4}
+    </a>,
+    <a href="https://www.opendota.com/players/{0}/matches?hero_id={5}">
+        {6}
+    </a> <br><br>
+Your play style are similar to: <br>
+    <a href="https://dotabuff.com/players/{7}">
+        https://www.dotabuff.com/players/{7}
+    </a> <br>
+    <a href="https://dotabuff.com/players/{8}">
+        https://www.dotabuff.com/players/{8}
+    </a> <br>
+    <a href="https://dotabuff.com/players/{9}">
+        https://www.dotabuff.com/players/{9}
+    </a> <br><br>
+We recommend you to practice:
             '''.format(
                 str(player_id),
                 str(sorted_hero_data[0][0]),

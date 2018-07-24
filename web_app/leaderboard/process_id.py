@@ -97,3 +97,39 @@ def get_player(player_id):
         }
     except:
         return None
+
+
+def display_message(leader_board):
+    # [TODO] Move message configuration to index.html
+    try:
+        message = '''
+            Player Leaderboard <br><br>'''
+
+        for i, player in enumerate(leader_board):
+            message = message + '''
+<b>Rank</b>: {0}<br>
+<b>Player id</b>: {1}<br>
+<b>Player name</b>: {2}<br>
+<b>Dotabuff profile</b>:
+    <a href="https://dotabuff.com/players/{1}">
+        dotabuff.com/players/{1}
+    </a><br>
+<b>Last week win rate</b>: {3}<br>
+<b>Last month win rate</b>: {4}<br>
+<b>Last year win rate</b>: {5}<br><br>
+                '''.format(
+                    str(i + 1),
+                    player['player_id'],
+                    player['player_name'],
+                    str(player['week_wr']) + ' %'
+                    if player['week_wr'] != -1.00
+                    else 'Not played since last week',
+                    str(player['month_wr']) + ' %'
+                    if player['month_wr'] != -1.00
+                    else 'Not played since last month',
+                    str(player['year_wr']) + ' %'
+                    if player['year_wr'] != -1.00
+                    else 'Not played since last year')
+    except:
+        message = 'Error !!!'
+    return message
